@@ -1,5 +1,4 @@
 from functools import lru_cache
-from typing import Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -28,13 +27,8 @@ class QdrantSettings(BaseSettings):
         env_prefix="QDRANT_",
     )
 
-    mode: Literal["local", "server"] = "local"
-    path: str = "./qdrant_data"
-    host: str = "localhost"
-    port: int = 6333
     url: str = "http://localhost:6333"
     api_key: str | None = None
-    api_key_suffix: str | None = None
     https: bool = False
     prefer_grpc: bool = False
     timeout: float = 5.0
