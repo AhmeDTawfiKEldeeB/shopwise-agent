@@ -1,18 +1,68 @@
+from functools import lru_cache
+from typing import Literal
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-class Settings(BaseSettings):
+class AppSettings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",
+        env_prefix="APP_",
     )
 
-    app_name: str = "ShopWise Agent API"
-    app_version: str = "v1"
+    name: str = "ShopWise Agent API"
+    version: str = "v1"
     debug: bool = False
     api_prefix: str = "/api/v1"
 
 
-settings = Settings()
+class QdrantSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+        env_prefix="QDRANT_",
+    )
+
+    mode: Literal["local", "server"] = "local"
+    path: str = "./qdrant_data"
+    host: str = "localhost"
+    port: int = 6333
+    url: str = "http://localhost:6333"
+    api_key: str | None = None
+    api_key_suffix: str | None = None
+    https: bool = False
+    prefer_grpc: bool = False
+    timeout: float = 5.0
+
+
+class VectorDbSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+        env_prefix="VECTOR_DB_",
+    )
+
+    provider: str = "qdrant"
+    collection: str = "default"
+
+
+@lru_cache
+def get_app_settings() -> AppSettings:
+    return AppSettings()
+
+
+@lru_cache
+def get_qdrant_settings() -> QdrantSettings:
+    return QdrantSettings()
+
+
+@lru_cache
+def get_vector_db_settings() -> VectorDbSettings:
+    return VectorDbSettings()
