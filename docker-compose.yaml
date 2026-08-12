@@ -1,0 +1,47 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.19.0
+    container_name: shopwise-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    networks:
+      - shopwise-net
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shopwise-backend
+    stdin_open: true
+    tty: true
+    environment:
+      APP_NAME: ${APP_NAME:-ShopWise Agent API}
+      APP_VERSION: ${APP_VERSION:-v1}
+      APP_DEBUG: ${APP_DEBUG:-false}
+      APP_API_PREFIX: ${APP_API_PREFIX:-/api/v1}
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_API_KEY: ${QDRANT_API_KEY:-}
+      QDRANT_PREFER_GRPC: false
+      QDRANT_TIMEOUT: 5.0
+      VECTOR_DB_PROVIDER: ${VECTOR_DB_PROVIDER:-qdrant}
+      VECTOR_DB_COLLECTION: ${VECTOR_DB_COLLECTION:-default}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - qdrant
+    networks:
+      - shopwise-net
+    restart: unless-stopped
+
+volumes:
+  qdrant_storage:
+
+networks:
+  shopwise-net:
+    driver: bridge
