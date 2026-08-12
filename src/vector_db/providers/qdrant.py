@@ -23,24 +23,20 @@ _DISTANCE_MAP = {
 
 
 class QdrantDB(VectorStore):
-    def __init__(self, path: str | None = None, url: str | None = None, api_key: str | None = None) -> None:
+    def __init__(
+        self,
+        url: str | None = None,
+        api_key: str | None = None,
+    ) -> None:
         qdrant_settings = get_qdrant_settings()
-        self.mode = qdrant_settings.mode
-        self.path = path or qdrant_settings.path
         self.url = url or qdrant_settings.url
         self.api_key = api_key or qdrant_settings.api_key
-        if self.mode == "local":
-            import os
-
-            os.makedirs(self.path, exist_ok=True)
-            self._client = QdrantClient(path=self.path)
-        else:
-            self._client = QdrantClient(
-                url=self.url,
-                api_key=self.api_key,
-                prefer_grpc=qdrant_settings.prefer_grpc,
-                timeout=qdrant_settings.timeout,
-            )
+        self._client = QdrantClient(
+            url=self.url,
+            api_key=self.api_key,
+            prefer_grpc=qdrant_settings.prefer_grpc,
+            timeout=qdrant_settings.timeout,
+        )
 
     @property
     def client(self) -> QdrantClient:
