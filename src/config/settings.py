@@ -47,6 +47,26 @@ class VectorDbSettings(BaseSettings):
     collection: str = "default"
 
 
+class PostgresSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+        env_prefix="POSTGRES_",
+    )
+
+    host: str = "localhost"
+    port: int = 5432
+    user: str = "postgres"
+    password: str = "postgres"
+    db: str = "shopwise"
+
+    @property
+    def database_url(self) -> str:
+        return f"postgresql://{self.user}:{self.password}@{self.host}:{self.port}/{self.db}"
+
+
 @lru_cache
 def get_app_settings() -> AppSettings:
     return AppSettings()
@@ -60,3 +80,8 @@ def get_qdrant_settings() -> QdrantSettings:
 @lru_cache
 def get_vector_db_settings() -> VectorDbSettings:
     return VectorDbSettings()
+
+
+@lru_cache
+def get_postgres_settings() -> PostgresSettings:
+    return PostgresSettings()
