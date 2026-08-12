@@ -11,6 +11,21 @@ services:
       - shopwise-net
     restart: unless-stopped
 
+  postgres:
+    image: postgres:16-alpine
+    container_name: shopwise-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-shopwise}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_storage:/var/lib/postgresql/data
+    networks:
+      - shopwise-net
+    restart: unless-stopped
+
   backend:
     build:
       context: .
@@ -29,18 +44,25 @@ services:
       QDRANT_TIMEOUT: 5.0
       VECTOR_DB_PROVIDER: ${VECTOR_DB_PROVIDER:-qdrant}
       VECTOR_DB_COLLECTION: ${VECTOR_DB_COLLECTION:-default}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-shopwise}
     ports:
       - "8000:8000"
     volumes:
       - ./src:/app/src
     depends_on:
       - qdrant
+      - postgres
     networks:
       - shopwise-net
     restart: unless-stopped
 
 volumes:
   qdrant_storage:
+  postgres_storage:
 
 networks:
   shopwise-net:
