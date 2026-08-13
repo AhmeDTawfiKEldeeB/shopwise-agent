@@ -38,7 +38,6 @@ class ProductDetails(Base):
     rating: Mapped[float | None] = mapped_column(Float, nullable=True)
     review_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     attributes: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
-    is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=utcnow, server_default=func.now(), nullable=False
     )
