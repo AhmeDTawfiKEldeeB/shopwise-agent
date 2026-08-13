@@ -64,6 +64,26 @@ class EmbeddingSettings(BaseSettings):
     gemini_api_key: str | None = None
 
 
+class LLMSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+        env_prefix="LLM_",
+    )
+
+    provider: str = "openrouter"
+    openrouter_model: str = "openrouter/auto"
+    openrouter_api_key: str | None = None
+    openrouter_base_url: str = "https://openrouter.ai/api/v1"
+    gemini_model: str = "gemini-2.5-flash"
+    gemini_api_key: str | None = None
+    groq_model: str = "llama-3.3-70b-versatile"
+    groq_api_key: str | None = None
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+
+
 class PostgresSettings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -107,3 +127,8 @@ def get_postgres_settings() -> PostgresSettings:
 @lru_cache
 def get_embedding_settings() -> EmbeddingSettings:
     return EmbeddingSettings()
+
+
+@lru_cache
+def get_llm_settings() -> LLMSettings:
+    return LLMSettings()
