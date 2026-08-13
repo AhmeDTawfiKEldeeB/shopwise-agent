@@ -47,6 +47,23 @@ class VectorDbSettings(BaseSettings):
     collection: str = "default"
 
 
+class EmbeddingSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+        env_prefix="EMBEDDING_",
+    )
+
+    provider: str = "huggingface"
+    dimension: int = 384
+    huggingface_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    huggingface_device: str | None = None
+    gemini_model: str = "text-embedding-004"
+    gemini_api_key: str | None = None
+
+
 class PostgresSettings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -85,3 +102,8 @@ def get_vector_db_settings() -> VectorDbSettings:
 @lru_cache
 def get_postgres_settings() -> PostgresSettings:
     return PostgresSettings()
+
+
+@lru_cache
+def get_embedding_settings() -> EmbeddingSettings:
+    return EmbeddingSettings()
