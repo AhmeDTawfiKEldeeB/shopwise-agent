@@ -2,7 +2,7 @@ import uuid
 
 import pytest
 
-from src.vector_db.providers.qdrant import QdrantDB
+from infrastructure.vector_db.providers.qdrant import QdrantDB
 
 
 @pytest.fixture
