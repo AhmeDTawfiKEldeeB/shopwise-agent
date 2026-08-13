@@ -8,4 +8,5 @@ alembic==1.19.1
 psycopg2-binary==2.9.10
 sentence-transformers
 google-genai
+openai
 
