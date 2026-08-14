@@ -23,8 +23,23 @@ class GeminiLLM(LLM):
         )
         return response.text
 
+    def stream_chat(self, messages: list[ChatMessage], **kwargs) -> iter:
+        stream = self._client.models.generate_content_stream(
+            model=self.model,
+            contents=[m.content for m in messages],
+            **kwargs,
+        )
+        for chunk in stream:
+            if chunk.text:
+                yield chunk.text
+
     def generate(self, prompt: str, **kwargs) -> str:
         return self.chat([ChatMessage(role="user", content=prompt)], **kwargs)
+
+    def stream_generate(self, prompt: str, **kwargs) -> iter:
+        yield from self.stream_chat(
+            [ChatMessage(role="user", content=prompt)], **kwargs
+        )
 
     def close(self) -> None:
         return None
