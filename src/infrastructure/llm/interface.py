@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from collections.abc import Iterator
 from dataclasses import dataclass
 
 
@@ -15,6 +16,14 @@ class LLM(ABC):
 
     @abstractmethod
     def generate(self, prompt: str, **kwargs) -> str:
+        raise NotImplementedError
+
+    @abstractmethod
+    def stream_chat(self, messages: list[ChatMessage], **kwargs) -> Iterator[str]:
+        raise NotImplementedError
+
+    @abstractmethod
+    def stream_generate(self, prompt: str, **kwargs) -> Iterator[str]:
         raise NotImplementedError
 
     @abstractmethod
