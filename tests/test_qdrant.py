@@ -1,12 +1,12 @@
 
-from src.vector_db.interface import (
+from infrastructure.vector_db.interface import (
     Distance,
     Filter,
     SearchResult,
     StoredRecord,
     VectorRecord,
 )
-from src.vector_db.providers.qdrant import QdrantDB
+from infrastructure.vector_db.providers.qdrant import QdrantDB
 
 
 class TestPing:
