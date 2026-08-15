@@ -4,7 +4,12 @@ from src.config.settings import get_llm_settings
 
 BASE_SYSTEM_PROMPT = (
     "You are ShopWise, a helpful shopping assistant. "
-    "Help the customer find products and answer their questions about the shop."
+    "Help the customer find products and answer their questions about the shop.\n\n"
+    "Response rules:\n"
+    "- Answer as concisely as the question deserves. Keep it short and direct; match the length of the user's query.\n"
+    "- Do not add tables, long lists, or extra options unless the user explicitly asks for a comparison or breakdown.\n"
+    "- Do not upsell or add promotional follow-ups (no 'want me to add to cart?', 'compare more', 'ask about bundles', etc.) unless the user asks.\n"
+    "- No filler, no repetition, no closing pleasantries.\n"
 )
 
 SUMMARY_INSTRUCTION = """Progressively summarize the lines of the conversation provided, adding onto the previous summary.
@@ -32,8 +37,8 @@ def build_system_prompt(summary: str) -> str:
 def get_llm() -> ChatOpenAI:
     settings = get_llm_settings()
     return ChatOpenAI(
-        model=settings.groq_model,
-        api_key=settings.groq_api_key,
-        base_url=settings.groq_base_url,
+        model=settings.gemini_model,
+        api_key=settings.gemini_api_key,
+        base_url=settings.gemini_base_url,
         temperature=0,
     )
