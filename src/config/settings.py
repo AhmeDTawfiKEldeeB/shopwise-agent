@@ -84,6 +84,19 @@ class LLMSettings(BaseSettings):
     groq_base_url: str = "https://api.groq.com/openai/v1"
 
 
+class AgentMemorySettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+        env_prefix="AGENT_MEMORY_",
+    )
+
+    summary_threshold: int = 20
+    recent_messages: int = 10
+
+
 class PostgresSettings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -132,3 +145,8 @@ def get_embedding_settings() -> EmbeddingSettings:
 @lru_cache
 def get_llm_settings() -> LLMSettings:
     return LLMSettings()
+
+
+@lru_cache
+def get_agent_memory_settings() -> AgentMemorySettings:
+    return AgentMemorySettings()
