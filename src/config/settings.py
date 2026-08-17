@@ -85,6 +85,21 @@ class LLMSettings(BaseSettings):
     groq_base_url: str = "https://api.groq.com/openai/v1"
 
 
+class LangSmithSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+        env_prefix="LANGSMITH_",
+    )
+
+    tracing: bool = True
+    endpoint: str = "https://api.smith.langchain.com"
+    api_key: str | None = None
+    project: str = "ShopWise"
+
+
 class AgentMemorySettings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -151,3 +166,8 @@ def get_llm_settings() -> LLMSettings:
 @lru_cache
 def get_agent_memory_settings() -> AgentMemorySettings:
     return AgentMemorySettings()
+
+
+@lru_cache
+def get_langsmith_settings() -> LangSmithSettings:
+    return LangSmithSettings()
