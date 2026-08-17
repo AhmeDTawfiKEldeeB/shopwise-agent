@@ -36,9 +36,22 @@ def build_system_prompt(summary: str) -> str:
 
 def get_llm() -> ChatOpenAI:
     settings = get_llm_settings()
+    provider = settings.provider.lower()
+
+    defaults = {
+        "groq": (settings.groq_model, settings.groq_api_key, settings.groq_base_url),
+        "openrouter": (settings.openrouter_model, settings.openrouter_api_key, settings.openrouter_base_url),
+        "gemini": (settings.gemini_model, settings.gemini_api_key, settings.gemini_base_url),
+    }
+    default_model, default_key, default_url = defaults.get(provider, defaults["gemini"])
+
+    model = settings.model or default_model
+    api_key = settings.api_key or default_key
+    base_url = settings.base_url or default_url
+
     return ChatOpenAI(
-        model=settings.gemini_model,
-        api_key=settings.gemini_api_key,
-        base_url=settings.gemini_base_url,
+        model=model,
+        api_key=api_key,
+        base_url=base_url,
         temperature=0,
     )
