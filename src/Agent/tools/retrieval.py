@@ -32,4 +32,25 @@ def retrieve_products(query: str, limit: int = 5) -> list[dict]:
         query: natural-language description of the product the user is looking for.
         limit: maximum number of products to return (default 5).
     """
-    return [result.payload for result in search_products(query, limit=limit)]
+    results = search_products(query, limit=limit)
+    products = []
+    for r in results:
+        p = r.payload
+        discount_price = None
+        if p.get("discount_percent", 0) > 0:
+            discount_price = round(p["price"] * (1 - p["discount_percent"] / 100), 2)
+        products.append({
+            "product_id": p.get("product_id"),
+            "name": p.get("name"),
+            "brand": p.get("brand"),
+            "category": p.get("category"),
+            "subcategory": p.get("subcategory"),
+            "price": p.get("price"),
+            "discount_percent": p.get("discount_percent", 0),
+            "discount_price": discount_price,
+            "currency": p.get("currency", "EGP"),
+            "rating": p.get("rating"),
+            "in_stock": (p.get("stock_quantity", 0) or 0) > 0,
+            "attributes": p.get("attributes", {}),
+        })
+    return products
