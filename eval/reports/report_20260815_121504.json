@@ -1,0 +1,1592 @@
+{
+  "generated_at": "2026-08-15T12:15:04.679758+00:00",
+  "config": {
+    "k_values": [
+      1,
+      3,
+      5
+    ],
+    "limit": 5,
+    "max_queries": null,
+    "dataset": "eval/data/eval_queries.jsonl",
+    "trace_enabled": true,
+    "langsmith_project": "ShopWise"
+  },
+  "num_queries": 36,
+  "per_query": [
+    {
+      "query": "shampoo",
+      "expected_ids": [
+        "P0003",
+        "P0021",
+        "P0022",
+        "P0034",
+        "P0050",
+        "P0054",
+        "P0059",
+        "P0080"
+      ],
+      "actual_ids": [
+        "P0034",
+        "P0050",
+        "P0059",
+        "P0003",
+        "P0080"
+      ],
+      "scores": [
+        0.589568,
+        0.577397,
+        0.576927,
+        0.565095,
+        0.546116
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.125,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.375,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.625,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "facial cleanser",
+      "expected_ids": [
+        "P0002",
+        "P0005",
+        "P0012",
+        "P0026",
+        "P0056",
+        "P0071",
+        "P0072",
+        "P0094"
+      ],
+      "actual_ids": [
+        "P0056",
+        "P0071",
+        "P0072",
+        "P0012",
+        "P0005"
+      ],
+      "scores": [
+        0.73339,
+        0.716974,
+        0.714162,
+        0.648812,
+        0.628207
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.125,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.375,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.625,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "laptop",
+      "expected_ids": [
+        "P0028",
+        "P0035",
+        "P0041",
+        "P0077",
+        "P0083",
+        "P0084"
+      ],
+      "actual_ids": [
+        "P0084",
+        "P0083",
+        "P0041",
+        "P0077",
+        "P0028"
+      ],
+      "scores": [
+        0.511342,
+        0.507175,
+        0.502481,
+        0.492998,
+        0.490385
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.166667,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.833333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "smart tv",
+      "expected_ids": [
+        "P0029",
+        "P0045",
+        "P0060",
+        "P0086",
+        "P0091",
+        "P0092"
+      ],
+      "actual_ids": [
+        "P0092",
+        "P0060",
+        "P0091",
+        "P0045",
+        "P0029"
+      ],
+      "scores": [
+        0.654426,
+        0.652364,
+        0.649093,
+        0.645042,
+        0.637193
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.166667,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.833333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "sneakers",
+      "expected_ids": [
+        "P0019",
+        "P0024",
+        "P0032",
+        "P0039",
+        "P0043",
+        "P0053"
+      ],
+      "actual_ids": [
+        "P0032",
+        "P0043",
+        "P0019",
+        "P0039",
+        "P0053"
+      ],
+      "scores": [
+        0.637682,
+        0.634975,
+        0.630734,
+        0.62934,
+        0.622088
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.166667,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.833333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "jeans",
+      "expected_ids": [
+        "P0020",
+        "P0038",
+        "P0085",
+        "P0090",
+        "P0095"
+      ],
+      "actual_ids": [
+        "P0095",
+        "P0020",
+        "P0085",
+        "P0090",
+        "P0038"
+      ],
+      "scores": [
+        0.645895,
+        0.637257,
+        0.636748,
+        0.604814,
+        0.587314
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.2,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.6,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "cotton t-shirt",
+      "expected_ids": [
+        "P0047",
+        "P0048",
+        "P0049",
+        "P0063",
+        "P0064",
+        "P0066"
+      ],
+      "actual_ids": [
+        "P0047",
+        "P0064",
+        "P0048",
+        "P0049",
+        "P0066"
+      ],
+      "scores": [
+        0.68035,
+        0.674685,
+        0.672224,
+        0.659403,
+        0.659403
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.166667,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.833333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "jacket",
+      "expected_ids": [
+        "P0010",
+        "P0078",
+        "P0081"
+      ],
+      "actual_ids": [
+        "P0081",
+        "P0010",
+        "P0078",
+        "P0020",
+        "P0095"
+      ],
+      "scores": [
+        0.51479,
+        0.499509,
+        0.489984,
+        0.271427,
+        0.270489
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "blender",
+      "expected_ids": [
+        "P0004",
+        "P0030",
+        "P0044",
+        "P0061",
+        "P0096"
+      ],
+      "actual_ids": [
+        "P0044",
+        "P0061",
+        "P0030",
+        "P0096",
+        "P0004"
+      ],
+      "scores": [
+        0.448011,
+        0.442401,
+        0.434988,
+        0.389184,
+        0.387488
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.2,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.6,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "kitchen appliances",
+      "expected_ids": [
+        "P0004",
+        "P0011",
+        "P0030",
+        "P0033",
+        "P0037",
+        "P0044",
+        "P0061",
+        "P0065",
+        "P0073",
+        "P0075",
+        "P0079",
+        "P0089",
+        "P0096"
+      ],
+      "actual_ids": [
+        "P0044",
+        "P0099",
+        "P0037",
+        "P0025",
+        "P0016"
+      ],
+      "scores": [
+        0.565903,
+        0.545053,
+        0.527689,
+        0.525785,
+        0.524378
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.076923,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.153846,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.153846,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "vacuum cleaner",
+      "expected_ids": [
+        "P0016",
+        "P0025"
+      ],
+      "actual_ids": [
+        "P0016",
+        "P0025",
+        "P0061",
+        "P0030",
+        "P0089"
+      ],
+      "scores": [
+        0.565753,
+        0.529219,
+        0.378022,
+        0.374377,
+        0.371876
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "hair dryer",
+      "expected_ids": [
+        "P0008",
+        "P0058"
+      ],
+      "actual_ids": [
+        "P0008",
+        "P0058",
+        "P0034",
+        "P0003",
+        "P0050"
+      ],
+      "scores": [
+        0.537301,
+        0.535645,
+        0.38732,
+        0.381733,
+        0.375664
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "air fryer",
+      "expected_ids": [
+        "P0075",
+        "P0089"
+      ],
+      "actual_ids": [
+        "P0075",
+        "P0089",
+        "P0055",
+        "P0016",
+        "P0040"
+      ],
+      "scores": [
+        0.67785,
+        0.630841,
+        0.312779,
+        0.304825,
+        0.303857
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "smartphone",
+      "expected_ids": [
+        "P0036",
+        "P0093"
+      ],
+      "actual_ids": [
+        "P0036",
+        "P0093",
+        "P0097",
+        "P0031",
+        "P0060"
+      ],
+      "scores": [
+        0.53506,
+        0.51836,
+        0.335866,
+        0.320771,
+        0.310778
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "makeup",
+      "expected_ids": [
+        "P0006",
+        "P0013",
+        "P0015",
+        "P0018",
+        "P0046",
+        "P0051",
+        "P0052",
+        "P0062",
+        "P0067",
+        "P0069",
+        "P0070",
+        "P0076",
+        "P0088"
+      ],
+      "actual_ids": [
+        "P0088",
+        "P0062",
+        "P0006",
+        "P0076",
+        "P0051"
+      ],
+      "scores": [
+        0.597901,
+        0.593212,
+        0.578615,
+        0.575341,
+        0.571396
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.076923,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.230769,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.384615,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "dove products",
+      "expected_ids": [
+        "P0003",
+        "P0059"
+      ],
+      "actual_ids": [
+        "P0059",
+        "P0003",
+        "P0005",
+        "P0018",
+        "P0013"
+      ],
+      "scores": [
+        0.60888,
+        0.603577,
+        0.344803,
+        0.329172,
+        0.304123
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "cerave skincare",
+      "expected_ids": [
+        "P0002",
+        "P0026",
+        "P0094"
+      ],
+      "actual_ids": [
+        "P0002",
+        "P0026",
+        "P0094",
+        "P0072",
+        "P0005"
+      ],
+      "scores": [
+        0.782321,
+        0.780005,
+        0.776317,
+        0.47884,
+        0.463446
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "philips home appliances",
+      "expected_ids": [
+        "P0037",
+        "P0040",
+        "P0044",
+        "P0065",
+        "P0073"
+      ],
+      "actual_ids": [
+        "P0073",
+        "P0040",
+        "P0044",
+        "P0065",
+        "P0037"
+      ],
+      "scores": [
+        0.626008,
+        0.621756,
+        0.619025,
+        0.596878,
+        0.548999
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.2,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.6,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "adidas",
+      "expected_ids": [
+        "P0010",
+        "P0043",
+        "P0078"
+      ],
+      "actual_ids": [
+        "P0043",
+        "P0010",
+        "P0078",
+        "P0039",
+        "P0053"
+      ],
+      "scores": [
+        0.705314,
+        0.527813,
+        0.522712,
+        0.504058,
+        0.493204
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "baseus accessories",
+      "expected_ids": [
+        "P0074",
+        "P0087"
+      ],
+      "actual_ids": [
+        "P0074",
+        "P0087",
+        "P0077",
+        "P0035",
+        "P0084"
+      ],
+      "scores": [
+        0.683556,
+        0.630506,
+        0.335899,
+        0.319905,
+        0.304328
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "asus laptop",
+      "expected_ids": [
+        "P0035",
+        "P0077",
+        "P0084"
+      ],
+      "actual_ids": [
+        "P0077",
+        "P0084",
+        "P0035",
+        "P0041",
+        "P0028"
+      ],
+      "scores": [
+        0.694658,
+        0.670923,
+        0.670068,
+        0.497192,
+        0.445272
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "apple laptop",
+      "expected_ids": [
+        "P0028"
+      ],
+      "actual_ids": [
+        "P0028",
+        "P0084",
+        "P0083",
+        "P0035",
+        "P0041"
+      ],
+      "scores": [
+        0.609415,
+        0.47367,
+        0.471268,
+        0.42945,
+        0.426138
+      ],
+      "metrics": {
+        "1": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.333333,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.2,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "samsung smartphone",
+      "expected_ids": [
+        "P0036"
+      ],
+      "actual_ids": [
+        "P0036",
+        "P0093",
+        "P0092",
+        "P0060",
+        "P0086"
+      ],
+      "scores": [
+        0.685703,
+        0.515207,
+        0.465691,
+        0.396368,
+        0.338684
+      ],
+      "metrics": {
+        "1": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.333333,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.2,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "wireless headphones",
+      "expected_ids": [
+        "P0001",
+        "P0017",
+        "P0031",
+        "P0057",
+        "P0068"
+      ],
+      "actual_ids": [
+        "P0017",
+        "P0057",
+        "P0031",
+        "P0001",
+        "P0068"
+      ],
+      "scores": [
+        0.690595,
+        0.640443,
+        0.605067,
+        0.594687,
+        0.564294
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.2,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.6,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "noise cancelling headphones",
+      "expected_ids": [
+        "P0017",
+        "P0031",
+        "P0068"
+      ],
+      "actual_ids": [
+        "P0017",
+        "P0001",
+        "P0057",
+        "P0031",
+        "P0068"
+      ],
+      "scores": [
+        0.478028,
+        0.462902,
+        0.456118,
+        0.448288,
+        0.442551
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.333333,
+          "precision": 0.333333,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "wireless charger",
+      "expected_ids": [
+        "P0007",
+        "P0097",
+        "P0100"
+      ],
+      "actual_ids": [
+        "P0100",
+        "P0097",
+        "P0007",
+        "P0057",
+        "P0017"
+      ],
+      "scores": [
+        0.678647,
+        0.628867,
+        0.599723,
+        0.336222,
+        0.316361
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "usb-c hub and cables",
+      "expected_ids": [
+        "P0074",
+        "P0087"
+      ],
+      "actual_ids": [
+        "P0087",
+        "P0074",
+        "P0100",
+        "P0007",
+        "P0057"
+      ],
+      "scores": [
+        0.601053,
+        0.466878,
+        0.242769,
+        0.192607,
+        0.166304
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "matte makeup",
+      "expected_ids": [
+        "P0006",
+        "P0013",
+        "P0015",
+        "P0051",
+        "P0067",
+        "P0069",
+        "P0076",
+        "P0088"
+      ],
+      "actual_ids": [
+        "P0088",
+        "P0067",
+        "P0013",
+        "P0006",
+        "P0051"
+      ],
+      "scores": [
+        0.668582,
+        0.635765,
+        0.611208,
+        0.599179,
+        0.590425
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.125,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 0.375,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 0.625,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "75 inch tv",
+      "expected_ids": [
+        "P0029",
+        "P0060",
+        "P0092"
+      ],
+      "actual_ids": [
+        "P0092",
+        "P0060",
+        "P0029",
+        "P0086",
+        "P0045"
+      ],
+      "scores": [
+        0.643488,
+        0.627495,
+        0.621402,
+        0.604172,
+        0.561396
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "pantene shampoo for damaged hair",
+      "expected_ids": [
+        "P0034",
+        "P0050"
+      ],
+      "actual_ids": [
+        "P0050",
+        "P0034",
+        "P0059",
+        "P0022",
+        "P0003"
+      ],
+      "scores": [
+        0.861885,
+        0.82216,
+        0.626978,
+        0.545095,
+        0.508947
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "shampoo for dry hair",
+      "expected_ids": [
+        "P0003"
+      ],
+      "actual_ids": [
+        "P0003",
+        "P0034",
+        "P0080",
+        "P0059",
+        "P0050"
+      ],
+      "scores": [
+        0.585629,
+        0.537263,
+        0.526056,
+        0.512757,
+        0.506093
+      ],
+      "metrics": {
+        "1": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.333333,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.2,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "shampoo for oily hair",
+      "expected_ids": [
+        "P0021",
+        "P0054",
+        "P0080"
+      ],
+      "actual_ids": [
+        "P0054",
+        "P0080",
+        "P0021",
+        "P0034",
+        "P0050"
+      ],
+      "scores": [
+        0.691689,
+        0.686202,
+        0.656003,
+        0.542702,
+        0.518626
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.333333,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "large shampoo bottle",
+      "expected_ids": [
+        "P0003",
+        "P0022"
+      ],
+      "actual_ids": [
+        "P0034",
+        "P0003",
+        "P0021",
+        "P0080",
+        "P0059"
+      ],
+      "scores": [
+        0.451098,
+        0.436097,
+        0.421015,
+        0.404835,
+        0.397809
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.0,
+          "precision": 0.0,
+          "hit_rate": 0.0,
+          "mrr": 0.0
+        },
+        "3": {
+          "recall": 0.5,
+          "precision": 0.333333,
+          "hit_rate": 1.0,
+          "mrr": 0.5
+        },
+        "5": {
+          "recall": 0.5,
+          "precision": 0.2,
+          "hit_rate": 1.0,
+          "mrr": 0.5
+        }
+      }
+    },
+    {
+      "query": "fragrance free facial cleanser",
+      "expected_ids": [
+        "P0002",
+        "P0012",
+        "P0056",
+        "P0071"
+      ],
+      "actual_ids": [
+        "P0072",
+        "P0056",
+        "P0071",
+        "P0012",
+        "P0005"
+      ],
+      "scores": [
+        0.74832,
+        0.737884,
+        0.713773,
+        0.687079,
+        0.678301
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.0,
+          "precision": 0.0,
+          "hit_rate": 0.0,
+          "mrr": 0.0
+        },
+        "3": {
+          "recall": 0.5,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 0.5
+        },
+        "5": {
+          "recall": 0.75,
+          "precision": 0.6,
+          "hit_rate": 1.0,
+          "mrr": 0.5
+        }
+      }
+    },
+    {
+      "query": "16gb ram laptop",
+      "expected_ids": [
+        "P0028",
+        "P0041"
+      ],
+      "actual_ids": [
+        "P0028",
+        "P0083",
+        "P0041",
+        "P0084",
+        "P0035"
+      ],
+      "scores": [
+        0.632713,
+        0.59345,
+        0.576241,
+        0.532169,
+        0.513168
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.5,
+          "precision": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "3": {
+          "recall": 1.0,
+          "precision": 0.666667,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        },
+        "5": {
+          "recall": 1.0,
+          "precision": 0.4,
+          "hit_rate": 1.0,
+          "mrr": 1.0
+        }
+      }
+    },
+    {
+      "query": "cheap shampoo",
+      "expected_ids": [
+        "P0054",
+        "P0080"
+      ],
+      "actual_ids": [
+        "P0059",
+        "P0034",
+        "P0003",
+        "P0050",
+        "P0080"
+      ],
+      "scores": [
+        0.541784,
+        0.541699,
+        0.530498,
+        0.519537,
+        0.504531
+      ],
+      "metrics": {
+        "1": {
+          "recall": 0.0,
+          "precision": 0.0,
+          "hit_rate": 0.0,
+          "mrr": 0.0
+        },
+        "3": {
+          "recall": 0.0,
+          "precision": 0.0,
+          "hit_rate": 0.0,
+          "mrr": 0.0
+        },
+        "5": {
+          "recall": 0.5,
+          "precision": 0.2,
+          "hit_rate": 1.0,
+          "mrr": 0.2
+        }
+      }
+    }
+  ],
+  "overall": {
+    "1": {
+      "recall": 0.337838,
+      "precision": 0.916667,
+      "hit_rate": 0.916667,
+      "mrr": 0.916667,
+      "num_queries": 36
+    },
+    "3": {
+      "recall": 0.728971,
+      "precision": 0.777778,
+      "hit_rate": 0.972222,
+      "mrr": 0.944444,
+      "num_queries": 36
+    },
+    "5": {
+      "recall": 0.874911,
+      "precision": 0.622222,
+      "hit_rate": 1.0,
+      "mrr": 0.95,
+      "num_queries": 36
+    }
+  }
+}
