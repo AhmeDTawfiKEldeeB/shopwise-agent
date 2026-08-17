@@ -25,10 +25,24 @@ async def send_message(req: ChatRequest) -> StreamingResponse:
 
     thread_id = req.thread_id or f"api-chat-{uuid.uuid4().hex[:8]}"
 
-    def _generate():
-        for token in stream(req.message, thread_id=thread_id):
-            yield f"data: {json.dumps({'token': token, 'thread_id': thread_id})}\n\n"
-        yield f"data: {json.dumps({'done': True, 'thread_id': thread_id})}\n\n"
+    async def _generate():
+        try:
+            async for event in stream(req.message, thread_id=thread_id):
+                if event["type"] == "token":
+                    yield f"data: {json.dumps({'token': event['text'], 'thread_id': thread_id})}\n\n"
+                elif event["type"] == "thinking_done":
+                    yield f"data: {json.dumps({'thinking_done': True, 'thread_id': thread_id})}\n\n"
+                elif event["type"] == "tool":
+                    yield f"data: {json.dumps({'tool': event['name'], 'thread_id': thread_id})}\n\n"
+            yield f"data: {json.dumps({'done': True, 'thread_id': thread_id})}\n\n"
+        except Exception as e:
+            error_msg = str(e)
+            if "429" in error_msg or "quota" in error_msg.lower():
+                error_msg = "Rate limit reached. Please try again later."
+            elif "connection" in error_msg.lower():
+                error_msg = "Could not connect to the AI service."
+            yield f"data: {json.dumps({'token': error_msg, 'thread_id': thread_id})}\n\n"
+            yield f"data: {json.dumps({'done': True, 'thread_id': thread_id})}\n\n"
 
     return StreamingResponse(_generate(), media_type="text/event-stream")
 
@@ -44,8 +58,10 @@ async def list_threads() -> ThreadListResponse:
         tid = cp.config["configurable"]["thread_id"]
         if tid in seen:
             continue
-        messages = cp.checkpoint.get("channel_values", {}).get("messages", [])
-        summary = cp.checkpoint.get("channel_values", {}).get("summary", "")
+        channels = cp.checkpoint.get("channel_values", {})
+        messages = channels.get("messages", [])
+        raw_summary = channels.get("summary", "")
+        summary = _normalize_text(raw_summary)
         seen[tid] = ThreadSummary(
             thread_id=tid,
             title=_derive_title(messages, tid),
@@ -80,8 +96,9 @@ async def thread_history(thread_id: str) -> ThreadHistoryResponse:
     messages = state.values.get("messages", [])
     history = []
     for msg in messages:
-        if msg.type in ("human", "ai") and msg.content:
-            history.append(ChatMessage(role="user" if msg.type == "human" else "assistant", content=msg.content))
+        content = _normalize_text(getattr(msg, "content", ""))
+        if msg.type in ("human", "ai") and content:
+            history.append(ChatMessage(role="user" if msg.type == "human" else "assistant", content=content))
 
     return ThreadHistoryResponse(
         status="success",
@@ -93,6 +110,21 @@ async def thread_history(thread_id: str) -> ThreadHistoryResponse:
 def _derive_title(messages, thread_id: str) -> str:
     for msg in messages:
         if getattr(msg, "type", "") == "human" and msg.content:
-            text = msg.content.strip()
-            return text[:40] + ("…" if len(text) > 40 else "")
+            text = _normalize_text(msg.content)
+            if text:
+                return text[:40] + ("…" if len(text) > 40 else "")
     return thread_id
+
+
+def _normalize_text(value) -> str:
+    if isinstance(value, str):
+        return value.strip()
+    if isinstance(value, list):
+        parts = []
+        for block in value:
+            if isinstance(block, dict):
+                parts.append(block.get("text", ""))
+            elif isinstance(block, str):
+                parts.append(block)
+        return " ".join(parts).strip()
+    return str(value) if value else ""
