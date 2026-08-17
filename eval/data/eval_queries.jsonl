@@ -1,0 +1,36 @@
+{"query": "shampoo", "expected_ids": ["P0003", "P0021", "P0022", "P0034", "P0050", "P0054", "P0059", "P0080"]}
+{"query": "facial cleanser", "expected_ids": ["P0002", "P0005", "P0012", "P0026", "P0056", "P0071", "P0072", "P0094"]}
+{"query": "laptop", "expected_ids": ["P0028", "P0035", "P0041", "P0077", "P0083", "P0084"]}
+{"query": "smart tv", "expected_ids": ["P0029", "P0045", "P0060", "P0086", "P0091", "P0092"]}
+{"query": "sneakers", "expected_ids": ["P0019", "P0024", "P0032", "P0039", "P0043", "P0053"]}
+{"query": "jeans", "expected_ids": ["P0020", "P0038", "P0085", "P0090", "P0095"]}
+{"query": "cotton t-shirt", "expected_ids": ["P0047", "P0048", "P0049", "P0063", "P0064", "P0066"]}
+{"query": "jacket", "expected_ids": ["P0010", "P0078", "P0081"]}
+{"query": "blender", "expected_ids": ["P0004", "P0030", "P0044", "P0061", "P0096"]}
+{"query": "kitchen appliances", "expected_ids": ["P0004", "P0011", "P0030", "P0033", "P0037", "P0044", "P0061", "P0065", "P0073", "P0075", "P0079", "P0089", "P0096"]}
+{"query": "vacuum cleaner", "expected_ids": ["P0016", "P0025"]}
+{"query": "hair dryer", "expected_ids": ["P0008", "P0058"]}
+{"query": "air fryer", "expected_ids": ["P0075", "P0089"]}
+{"query": "smartphone", "expected_ids": ["P0036", "P0093"]}
+{"query": "makeup", "expected_ids": ["P0006", "P0013", "P0015", "P0018", "P0046", "P0051", "P0052", "P0062", "P0067", "P0069", "P0070", "P0076", "P0088"]}
+{"query": "dove products", "expected_ids": ["P0003", "P0059"]}
+{"query": "cerave skincare", "expected_ids": ["P0002", "P0026", "P0094"]}
+{"query": "philips home appliances", "expected_ids": ["P0037", "P0040", "P0044", "P0065", "P0073"]}
+{"query": "adidas", "expected_ids": ["P0010", "P0043", "P0078"]}
+{"query": "baseus accessories", "expected_ids": ["P0074", "P0087"]}
+{"query": "asus laptop", "expected_ids": ["P0035", "P0077", "P0084"]}
+{"query": "apple laptop", "expected_ids": ["P0028"]}
+{"query": "samsung smartphone", "expected_ids": ["P0036"]}
+{"query": "wireless headphones", "expected_ids": ["P0001", "P0017", "P0031", "P0057", "P0068"]}
+{"query": "noise cancelling headphones", "expected_ids": ["P0017", "P0031", "P0068"]}
+{"query": "wireless charger", "expected_ids": ["P0007", "P0097", "P0100"]}
+{"query": "usb-c hub and cables", "expected_ids": ["P0074", "P0087"]}
+{"query": "matte makeup", "expected_ids": ["P0006", "P0013", "P0015", "P0051", "P0067", "P0069", "P0076", "P0088"]}
+{"query": "75 inch tv", "expected_ids": ["P0029", "P0060", "P0092"]}
+{"query": "pantene shampoo for damaged hair", "expected_ids": ["P0034", "P0050"]}
+{"query": "shampoo for dry hair", "expected_ids": ["P0003"]}
+{"query": "shampoo for oily hair", "expected_ids": ["P0021", "P0054", "P0080"]}
+{"query": "large shampoo bottle", "expected_ids": ["P0003", "P0022"]}
+{"query": "fragrance free facial cleanser", "expected_ids": ["P0002", "P0012", "P0056", "P0071"]}
+{"query": "16gb ram laptop", "expected_ids": ["P0028", "P0041"]}
+{"query": "cheap shampoo", "expected_ids": ["P0054", "P0080"]}
