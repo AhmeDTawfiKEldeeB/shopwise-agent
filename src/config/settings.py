@@ -73,14 +73,19 @@ class LLMSettings(BaseSettings):
         env_prefix="LLM_",
     )
 
-    provider: str = "openrouter"
+    provider: str = "groq"
+
+    api_key: str | None = None
+    model: str | None = None
+    base_url: str | None = None
+
     openrouter_model: str = "openrouter/auto"
     openrouter_api_key: str | None = None
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
     gemini_model: str = "gemini-2.5-flash"
     gemini_api_key: str | None = None
     gemini_base_url: str = "https://generativelanguage.googleapis.com/v1beta/openai/"
-    groq_model: str = "llama-3.3-70b-versatile"
+    groq_model: str = "openai/gpt-oss-120b"
     groq_api_key: str | None = None
     groq_base_url: str = "https://api.groq.com/openai/v1"
 
